@@ -1,0 +1,24 @@
+{
+  "name": "ght",
+  "version": "1.0.0",
+  "description": "A command line tool for GitHub Issue and Pull Request",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BytesClub/ght.git"
+  },
+  "keywords": [
+    "ght",
+    "BytesClub",
+    "Node"
+  ],
+  "author": "Bytes Club",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BytesClub/ght/issues"
+  },
+  "homepage": "https://github.com/BytesClub/ght#readme"
+}
