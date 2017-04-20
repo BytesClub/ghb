@@ -17,6 +17,9 @@
   ],
   "author": "Bytes Club",
   "license": "MIT",
+  "contributors": {
+    "url": "https://github.com/BytesClub/ght/graphs/contributors"
+  },
   "bugs": {
     "url": "https://github.com/BytesClub/ght/issues"
   },
