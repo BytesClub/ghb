@@ -1,1 +1,0 @@
-curl -i https://api.github.com/repos/BytesClub/ght

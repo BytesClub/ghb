@@ -7,3 +7,19 @@
 [![gitter](https://badges.gitter.im/gitterHQ/gitterHQ.github.io.svg)](https://gitter.im/Bytes_Club/General)
 
 ght is a command line tool to fetch and update GitHub Issue and Pull Request from terminal
+
+### Usage
+* Configure _**ght**_ with local repo
+```bash
+$ ght set-url <github-url>
+```
+* Fetch latest issues/pr from GitHub
+```bash
+$ ght fetch issue
+$ ght fetch pulls
+```
+* View last state of issues/pr
+```bash
+$ ght view issue
+$ ght view pulls
+```
