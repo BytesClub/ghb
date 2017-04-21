@@ -4,7 +4,8 @@
   "description": "A command line tool for GitHub Issue and Pull Request",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node src/app.js fetch issues && node src/app.js view issue"
+    "build": "node src/app.js set-url https://github.com/BytesClub/ght"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   ],
   "author": "Bytes Club",
   "license": "MIT",
+  "contributors": {
+    "url": "https://github.com/BytesClub/ght/graphs/contributors"
+  },
   "bugs": {
     "url": "https://github.com/BytesClub/ght/issues"
   },
