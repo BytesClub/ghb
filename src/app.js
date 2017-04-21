@@ -73,7 +73,7 @@ switch (argv[index + 1]) {
 				}, 
 					(res) => {
 						if (res.statusCode !== 200)
-							throw `Error: Connection error occured. Please check your net connection and try later.`
+							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
 						let fd = fs.createWriteStream(issue)
 						res.on('data', (d) => {
 							fd.write(d)
@@ -97,7 +97,7 @@ switch (argv[index + 1]) {
 				}, 
 					(res) => {
 						if (res.statusCode !== 200)
-								throw `Error: Connection error occured. Please check your net connection and try later.`
+							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
 						let fd = fs.createWriteStream(pulls)
 						res.on('data', (d) => {
 							fd.write(d)
