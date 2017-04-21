@@ -4,8 +4,8 @@
   "description": "A command line tool for GitHub Issue and Pull Request",
   "main": "src/app.js",
   "scripts": {
-    "test": "node app.js fetch issues && node app.js view issue",
-    "build": "cd src/ && node app.js set-url https://github.com/BytesClub/ght"
+    "test": "node app.js fetch issues",
+    "build": "cd src/ && node app.js set-url https://github.com/BytesClub/Tic_Tac_Toe"
   },
   "repository": {
     "type": "git",
