@@ -64,17 +64,16 @@ switch (argv[index + 1]) {
 		switch (argv[index + 2]) {
 			/*	Operation `fetch issue`	*/
 			case 'issue':
-				https.request({
+				https.get({
 					hostname: host,
 					path: pathUrl + '/issues',
-					method: 'GET',
 					headers: {
 						'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
 					}
 				}, 
 					(res) => {
 						if (res.statusCode !== 200)
-							throw `Error: Connection error occured. Please check your net connection and try later.`
+							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
 						let fd = fs.createWriteStream(issue)
 						res.on('data', (d) => {
 							fd.write(d)
@@ -89,17 +88,16 @@ switch (argv[index + 1]) {
 				break
 			/*	Operation `fetch pulls`	*/
 			case 'pulls':
-				https.request({
+				https.get({
 					hostname: host,
 					path: pathUrl + '/pulls',
-					method: 'GET',
 					headers: {
 						'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36'
 					}
 				}, 
 					(res) => {
 						if (res.statusCode !== 200)
-								throw `Error: Connection error occured. Please check your net connection and try later.`
+							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
 						let fd = fs.createWriteStream(pulls)
 						res.on('data', (d) => {
 							fd.write(d)
