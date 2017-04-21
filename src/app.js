@@ -19,6 +19,7 @@
  *
  */
 
+'use strict'
 const argv  = process.argv,
       https = require('https'),
       fs    = require('fs'),
