@@ -28,7 +28,7 @@ const	argv  = process.argv,
 	issue = './ght.issue.json',
 	pulls = './ght.pull.json'
 
-let index = argv[0] === 'ght' ? 0 : 1
+var index = argv[0] === 'ght' ? 0 : 1
 
 var config = JSON.parse(fs.readFileSync(conf, 'utf8'))
 
@@ -72,8 +72,10 @@ switch (argv[index + 1]) {
 					}
 				}, 
 					(res) => {
-						if (res.statusCode !== 200)
+						if (res.statusCode !== 200){
 							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
+							process.exit(0)
+						}
 						let fd = fs.createWriteStream(issue)
 						res.on('data', (d) => {
 							fd.write(d)
@@ -83,6 +85,7 @@ switch (argv[index + 1]) {
 							process.exit(0)
 						})
 					}).on('error', (err) => {
+						fs.createWriteStream(issue).end('[]')
 						throw err
 					})
 				break
@@ -96,8 +99,10 @@ switch (argv[index + 1]) {
 					}
 				}, 
 					(res) => {
-						if (res.statusCode !== 200)
+						if (res.statusCode !== 200){
 							console.log(`Error: Connection error occured. Please check your net connection and try later.`)
+							process.exit(0)
+						}
 						let fd = fs.createWriteStream(pulls)
 						res.on('data', (d) => {
 							fd.write(d)
@@ -107,6 +112,7 @@ switch (argv[index + 1]) {
 							process.exit(0)
 						})
 					}).on('error', (err) => {
+						fs.createWriteStream(issue).end('[]')
 						throw err
 					})
 				break
@@ -119,7 +125,12 @@ switch (argv[index + 1]) {
 		switch (argv[index + 2]) {
 			/*	Operation `view issue`	*/
 			case 'issue':
-				let issues = JSON.parse(fs.readFileSync(issue, 'utf8'))
+				let issueFd = fs.readFileSync(issue, 'utf8')
+				if (issueFd.trim() === ''){
+					console.log(`No Issue found in ${config.url}, You may fetch again for latest updates.`)
+					process.exit(0)
+				}
+				let issues = JSON.parse(issueFd)
 				if (typeof issues === 'undefined' || (Object.keys(issues).length === 0 && issues. constructor === Object))
 					throw `Fatal Error: Git issue not found in given url!\n\nUse ${argv[index]} get issue to get the latest.`
 				issues.forEach((val, index, arr) => {
@@ -141,7 +152,12 @@ switch (argv[index + 1]) {
 				break
 			/*	Operation `view pulls`	*/
 			case 'pulls':
-				let pullRq = JSON.parse(fs.readFileSync(pulls, 'utf8'))
+				let pullFd = fs.readFileSync(pulls, 'utf8')
+				if (pullFd.trim() === ''){
+					console.log(`No Pull Request found in ${config.url}, You may fetch again for latest updates.`)
+					process.exit(0)
+				}
+				let pullRq = JSON.parse(pullFd)
 				if (typeof pullRq === 'undefined' || (Object.keys(pullRq).length === 0 && pullRq. constructor === Object))
 					throw `Fatal Error: Git pull request not found in given url!\n\nUse ${argv[index]} get pulls to get the latest.`
 				pullRq.forEach((val, index, arr) => {
@@ -163,4 +179,6 @@ switch (argv[index + 1]) {
 				throw `Fatal Error: Invalid Git operation specified!\n\nUsage: ${argv[index]} view [options]\nOptions:\nissue: View Issues\npulls: View Pull Requests`
 		}
 	break
+	default:
+		process.exit(0)
 }
