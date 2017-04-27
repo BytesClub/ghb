@@ -7,8 +7,8 @@
 	"ght": "app.js"
   },
   "scripts": {
-    "test": "cd src/ && node app.js fetch issue",
-    "build": "cd src/ && node app.js set-url https://github.com/BytesClub/Tic_Tac_Toe"
+    "test": "ght issues",
+    "build": "ght init https://github.com/BytesClub/Tic_Tac_Toe"
   },
   "repository": {
     "type": "git",
