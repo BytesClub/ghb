@@ -2,10 +2,13 @@
   "name": "ght",
   "version": "1.0.0",
   "description": "A command line tool for GitHub Issue and Pull Request",
-  "main": "src/app.js",
+  "main": "app.js",
+  "bin": {
+	"ght": "app.js"
+  },
   "scripts": {
-    "test": "cd src/ && node app.js fetch issue",
-    "build": "cd src/ && node app.js set-url https://github.com/BytesClub/Tic_Tac_Toe"
+    "test": "ght issues",
+    "build": "ght init https://github.com/BytesClub/Tic_Tac_Toe"
   },
   "repository": {
     "type": "git",
