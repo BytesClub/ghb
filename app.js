@@ -30,6 +30,13 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 		ght = new GHT({data: argv[index + 1], type: 'url'})
 	} else
 		console.log(infoStr)
+} else if ((index = argv.indexOf('status')) !== -1) {
+	ght = new GHT({data: confFile, type: 'json'})
+	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
+		let err = `GitHub Terminal has not been initiated in this repository.`
+		throw err;
+	} else
+		console.log('Repository: Github\nURL:', ght.get_url)
 } else if ((index = argv.indexOf('issues')) !== -1) {
 	ght = new GHT({data: confFile, type: 'json'})
 	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
@@ -42,9 +49,9 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 			console.log(helpStr)
 			process.exit(0)
 		}
-		ght.getIssues = state
+		ght.getIssues(state)
 	} else
-		ght.getIssues = 'open'
+		ght.getIssues('open')
 } else if ((index = argv.indexOf('pulls')) !== -1) {
 	ght = new GHT({data: confFile, type: 'json'})
 	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
@@ -57,9 +64,9 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 			console.log(helpStr)
 			process.exit(0)
 		}
-		ght.getPulls = state
+		ght.getPulls(state)
 	} else
-		ght.getPulls = 'open'
+		ght.getPulls('open')
 } else {
 	console.log(infoStr)
 }
