@@ -8,7 +8,8 @@ const  argv = process.argv,
        GHT  = require('./lib/ght.js')
 
 var CONFIG = path.resolve(__dirname, '.ghb'),
-    confFile = CONFIG + '/.CONFIG'
+    FILE = '/.CONFIG',
+	confFile = (CONFIG + FILE)
 const helpStr =
 `Usage: ght [options] [parameter]
  init  : Initialize GHT in your repo
@@ -73,5 +74,5 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 
 process.on('exit', () => {
 	if (typeof ght !== 'undefined' && !(Object.keys(ght).length === 0 && ght. constructor === Object))
-		ght.dump = confFile
+		ght.dump = {dir: CONFIG, file: FILE}
 })
