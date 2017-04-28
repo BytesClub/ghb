@@ -8,38 +8,40 @@ const  argv = process.argv,
        GHT  = require('./lib/ght.js')
 
 var CONFIG = path.resolve(__dirname, '.ghb'),
-    confFile = CONFIG + '/.CONFIG'
+    FILE = '/.CONFIG',
+    confFile = (CONFIG + FILE)
 const helpStr =
-`Usage: ght [options] [parameter]
+`Usage: ghb [options] [parameter]
  init  : Initialize GHT in your repo
        Required parameter: [url]
+ status: Show current state of GHB
  issue : Fetch and display issues
        Optional parameter: [open / closed]
  pulls : Fetch and display pull requests
        Optional parameter: [open / closed]`,
   infoStr =
 `Invalid number of argumnet passed
-ght -h or ght -help to see usage details.`
+ghb -h or ghb --help to see usage details.`
 
-var ght, index = 0
+var ghb, index = 0
 
-if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
+if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
 	console.log(helpStr)
 } else if ((index = argv.indexOf('init')) !== -1) {
 	if (typeof argv[index + 1] === 'string') {
-		ght = new GHT({data: argv[index + 1], type: 'url'})
+		ghb = new GHT({data: argv[index + 1], type: 'url'})
 	} else
 		console.log(infoStr)
 } else if ((index = argv.indexOf('status')) !== -1) {
-	ght = new GHT({data: confFile, type: 'json'})
-	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
+	ghb = new GHT({data: confFile, type: 'json'})
+	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
 		let err = `GitHub Terminal has not been initiated in this repository.`
 		throw err;
 	} else
-		console.log('Repository: Github\nURL:', ght.get_url)
+		console.log('Repository: Github\nURL:', ghb.get_url)
 } else if ((index = argv.indexOf('issues')) !== -1) {
-	ght = new GHT({data: confFile, type: 'json'})
-	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
+	ghb = new GHT({data: confFile, type: 'json'})
+	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
 		let err = `GitHub Terminal has not been initiated in this repository.`
 		throw err;
 	}
@@ -49,12 +51,12 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 			console.log(helpStr)
 			process.exit(0)
 		}
-		ght.getIssues(state)
+		ghb.getIssues(state)
 	} else
-		ght.getIssues('open')
+		ghb.getIssues('open')
 } else if ((index = argv.indexOf('pulls')) !== -1) {
-	ght = new GHT({data: confFile, type: 'json'})
-	if (typeof ght === 'undefined' || (Object.keys(ght).length === 0 && ght. constructor === Object)) {
+	ghb = new GHT({data: confFile, type: 'json'})
+	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
 		let err = `GitHub Terminal has not been initiated in this repository.`
 		throw err;
 	}
@@ -64,14 +66,14 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 			console.log(helpStr)
 			process.exit(0)
 		}
-		ght.getPulls(state)
+		ghb.getPulls(state)
 	} else
-		ght.getPulls('open')
+		ghb.getPulls('open')
 } else {
 	console.log(infoStr)
 }
 
 process.on('exit', () => {
-	if (typeof ght !== 'undefined' && !(Object.keys(ght).length === 0 && ght. constructor === Object))
-		ght.dump = confFile
+	if (typeof ghb !== 'undefined' && !(Object.keys(ghb).length === 0 && ghb. constructor === Object))
+		ghb.dump = {dir: CONFIG, file: FILE}
 })

@@ -1,36 +1,36 @@
 {
   "name": "ghb",
-  "version": "1.0.0",
+  "version": "1.1.2",
   "description": "A command line tool for GitHub Issue and Pull Request",
   "main": "app.js",
   "bin": {
-	"ghb": "app.js"
+    "ghb": "app.js"
   },
   "scripts": {
     "test": "ghb issues",
-    "build": "ghb init https://github.com/BytesClub/Tic_Tac_Toe"
+    "build": "ghb init https://github.com/BytesClub/ghb"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BytesClub/ght.git"
+    "url": "git+https://github.com/BytesClub/ghb.git"
   },
   "keywords": [
-    "ght",
-	"GitHub",
+    "ghb",
+    "GitHub",
     "BytesClub",
     "Node"
   ],
   "author": {
     "name": "Bytes Club",
-	"email": "bytes-club@googlegroups.com",
-	"url": "https://bytesclub.github.io"
+    "email": "bytes-club@googlegroups.com",
+    "url": "https://bytesclub.github.io"
   },
   "license": "MIT",
   "contributors": {
-    "url": "https://github.com/BytesClub/ght/graphs/contributors"
+    "url": "https://github.com/BytesClub/ghb/graphs/contributors"
   },
   "bugs": {
-    "url": "https://github.com/BytesClub/ght/issues"
+    "url": "https://github.com/BytesClub/ghb/issues"
   },
-  "homepage": "https://github.com/BytesClub/ght#readme"
+  "homepage": "https://github.com/BytesClub/ghb#readme"
 }
