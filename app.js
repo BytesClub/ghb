@@ -71,10 +71,7 @@ if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('-help')) !== -1) {
 	console.log(infoStr)
 }
 
-// DEBUG		console.log(process._getActiveHandles())
-
 process.on('exit', () => {
 	if (typeof ght !== 'undefined' && !(Object.keys(ght).length === 0 && ght. constructor === Object))
 		ght.dump = confFile
 })
-//process.exit(0)
