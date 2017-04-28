@@ -7,7 +7,7 @@ const  argv = process.argv,
        path = require('path'),
        GHT  = require('./lib/ght.js')
 
-var CONFIG = path.resolve(__dirname, '.ght'),
+var CONFIG = path.resolve(__dirname, '.ghb'),
     confFile = CONFIG + '/.CONFIG'
 const helpStr =
 `Usage: ght [options] [parameter]

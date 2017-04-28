@@ -1,14 +1,14 @@
 {
-  "name": "ght",
+  "name": "ghb",
   "version": "1.0.0",
   "description": "A command line tool for GitHub Issue and Pull Request",
   "main": "app.js",
   "bin": {
-	"ght": "app.js"
+	"ghb": "app.js"
   },
   "scripts": {
-    "test": "ght issues",
-    "build": "ght init https://github.com/BytesClub/Tic_Tac_Toe"
+    "test": "ghb issues",
+    "build": "ghb init https://github.com/BytesClub/Tic_Tac_Toe"
   },
   "repository": {
     "type": "git",
@@ -16,10 +16,15 @@
   },
   "keywords": [
     "ght",
+	"GitHub",
     "BytesClub",
     "Node"
   ],
-  "author": "Bytes Club",
+  "author": {
+    "name": "Bytes Club",
+	"email": "bytes-club@googlegroups.com",
+	"url": "https://bytesclub.github.io"
+  },
   "license": "MIT",
   "contributors": {
     "url": "https://github.com/BytesClub/ght/graphs/contributors"
