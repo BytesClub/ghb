@@ -1,4 +1,9 @@
 # ghb
+
+![ghb](Docs/ghb.png)
+
+ghb is a command line tool to fetch and update GitHub Issue and Pull Request from terminal
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/BytesClub/ghb/master/LICENSE)
 [![Build Status](https://travis-ci.org/BytesClub/ghb.svg?branch=master)](https://travis-ci.org/BytesClub/ghb)
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/ghb)
@@ -7,8 +12,6 @@
 [![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/pulls)
 [![Releases](https://img.shields.io/github/release/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/releases)
 [![gitter](https://badges.gitter.im/gitterHQ/gitterHQ.github.io.svg)](https://gitter.im/Bytes_Club/General)
-
-ghb is a command line tool to fetch and update GitHub Issue and Pull Request from terminal
 
 ### Installation
 
