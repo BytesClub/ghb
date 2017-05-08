@@ -1,3 +1,10 @@
+/*
+ * GHB - GitHub on Terminal
+ * Copyright (C) 2017 Progyan Bhattacharya <admin@codeprogyan.me>
+ * Maintained by: Bytes Club (https://bytesclub.github.io)
+ * Distributed under MIT License.
+ */
+
 #!/usr/bin/env node
 'use strict'
 
@@ -24,7 +31,9 @@ ghb -h or ghb --help to see usage details.`
 
 var ghb, index = 0
 
-if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
+if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
+	console.log('GHB v1.2.0')
+} else if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
 	console.log(helpStr)
 } else if ((index = argv.indexOf('init')) !== -1) {
 	if (typeof argv[index + 1] === 'string') {
