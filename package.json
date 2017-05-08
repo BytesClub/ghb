@@ -7,7 +7,7 @@
     "ghb": "app.js"
   },
   "scripts": {
-	"install": "source ghb-auto.sh || sudo source ghb-auto.sh",
+	"install": "source ghb-auto.sh",
     "test": "ghb issues",
     "build": "ghb init https://github.com/BytesClub/ghb"
   },
