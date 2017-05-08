@@ -18,8 +18,8 @@ branches:
   only:
     - master
 install:
-  - npm install
   - npm link
+  - source ghb-auto.sh
 script:
   - npm run build
   - npm test

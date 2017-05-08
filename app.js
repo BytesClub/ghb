@@ -1,5 +1,30 @@
 #!/usr/bin/env node
-'use strict'
+
+/*
+ * GHB - GitHub on Terminal
+ * Copyright (C) 2017 Progyan Bhattacharya <admin@codeprogyan.me>
+ * Maintained by: Bytes Club (https://bytesclub.github.io)<bytes-club@googlegroups.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
+'use strict';
 
 const  argv = process.argv,
        fs   = require('fs'),
@@ -24,7 +49,9 @@ ghb -h or ghb --help to see usage details.`
 
 var ghb, index = 0
 
-if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
+if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
+	console.log('GHB v1.2.0')
+} else if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
 	console.log(helpStr)
 } else if ((index = argv.indexOf('init')) !== -1) {
 	if (typeof argv[index + 1] === 'string') {
