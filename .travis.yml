@@ -1,5 +1,5 @@
 language: node_js
-sudo: false
+sudo: required
 node_js:
   - "6"
 os: linux
@@ -18,8 +18,7 @@ branches:
   only:
     - master
 install:
+  - npm install
   - npm link
-  - source ghb-auto.sh
 script:
-  - npm run build
   - npm test

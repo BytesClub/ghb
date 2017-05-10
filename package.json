@@ -7,8 +7,8 @@
     "ghb": "app.js"
   },
   "scripts": {
-    "test": "ghb issues",
-    "build": "ghb init https://github.com/BytesClub/ghb"
+    "install": "chmod +x install.sh && sudo bash install.sh",
+    "test": "ghb init https://github.com/BytesClub/ghb && ghb issues"
   },
   "repository": {
     "type": "git",
