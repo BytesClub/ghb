@@ -18,6 +18,7 @@ ghb is a command line tool to fetch and update GitHub Issue and Pull Request fro
 * Using _**npm**_
 ```bash
 $ npm install ghb -g
+$ curl https://raw.githubusercontent.com/BytesClub/ghb/master/ghb-auto.sh > /etc/bash_completion.d/ghb
 ```
 
 ### Usage
