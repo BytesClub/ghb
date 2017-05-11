@@ -12,7 +12,7 @@ _ghb() {
     COMPREPLY=()
     cur="${COMP_WORDS[COMP_CWORD]}"
     prev="${COMP_WORDS[COMP_CWORD-1]}"
-    readonly -a opts=("-h" "--help" "-v" "--version" "init" "status" "issues" "pulls")
+    readonly -a opts=("-h" "--help" "-v" "--version" "init" "status" "issues" "pulls" "open" "closed" "all" "id=")
     opt=''
 
     for i in "${opts[@]}"

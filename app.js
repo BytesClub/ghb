@@ -40,9 +40,9 @@ const helpStr =
        Required parameter: [url]
  status: Show current state of GHB
  issue : Fetch and display issues
-       Optional parameter: [open / closed]
+       Optional parameter: [open / closed / id]
  pulls : Fetch and display pull requests
-       Optional parameter: [open / closed]`,
+       Optional parameter: [open / closed / id]`,
   infoStr =
 `Invalid number of argumnet passed
 ghb -h or ghb --help to see usage details.`
@@ -72,12 +72,18 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 		throw err;
 	}
 	if (typeof argv[index + 1] === 'string') {
-		let state = argv[index + 1]
-		if (state !== 'open' && state !== 'closed' && state !== 'all'){
-			console.log(helpStr)
-			process.exit(0)
+		var regM = argv[index + 1].match(/id=(\d+)/i)
+		if (regM && regM.length !== 0) {
+			let issueId = parseInt(regM[1])
+			ghb.getIssues(issueId)
+		} else {
+			let state = argv[index + 1]
+			if (state !== 'open' && state !== 'closed' && state !== 'all'){
+				console.log(helpStr)
+				process.exit(0)
+			}
+			ghb.getIssues(state)
 		}
-		ghb.getIssues(state)
 	} else
 		ghb.getIssues('open')
 } else if ((index = argv.indexOf('pulls')) !== -1) {
@@ -87,12 +93,18 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 		throw err;
 	}
 	if (typeof argv[index + 1] === 'string') {
-		let state = argv[index + 1]
-		if (state !== 'open' && state !== 'closed' && state !== 'all'){
-			console.log(helpStr)
-			process.exit(0)
+		var regM = argv[index + 1].match(/id=(\d+)/i)
+		if (regM && regM.length !== 0) {
+			let pullId = parseInt(regM[1])
+			ghb.getPulls(pullId)
+		} else {
+			let state = argv[index + 1]
+			if (state !== 'open' && state !== 'closed' && state !== 'all'){
+				console.log(helpStr)
+				process.exit(0)
+			}
+			ghb.getPulls(state)
 		}
-		ghb.getPulls(state)
 	} else
 		ghb.getPulls('open')
 } else {

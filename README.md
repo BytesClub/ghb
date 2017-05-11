@@ -32,8 +32,8 @@ $ ghb status
 ```
 * Get latest issues/pr from GitHub
 ```bash
-$ ghb issues
-$ ghb pulls
+$ ghb issues [options: open | closed | all | id={ID}]
+$ ghb pulls [options: open | closed | all | id={ID}]
 ```
 
 ### Contribute
