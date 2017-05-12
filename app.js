@@ -26,14 +26,15 @@
 
 'use strict';
 
-const  argv = process.argv,
-       fs   = require('fs'),
-       path = require('path'),
-       GHT  = require('./lib/ght.js')
+const  argv   = process.argv,
+       curDir = process.cwd(),
+       fs     = require('fs'),
+       path   = require('path'),
+       GHT    = require('./lib/ght.js')
 
 var CONFIG = path.resolve(__dirname, '.ghb'),
-    FILE = '/.CONFIG',
-    confFile = (CONFIG + FILE)
+    FILE = curDir.replace(/[|&:;$%@"<>()+,\/\\\s]/g, '-'),
+    confFile = (CONFIG + '/' + FILE)
 const helpStr =
 `Usage: ghb [options] [parameter]
  init  : Initialize GHT in your repo

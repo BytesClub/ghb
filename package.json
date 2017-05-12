@@ -1,6 +1,6 @@
 {
   "name": "ghb",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "A command line tool for GitHub Issue and Pull Request",
   "main": "app.js",
   "bin": {

@@ -28,6 +28,7 @@ build/Release
 
 # Dependency directories
 bin
+.ghb
 node_modules
 jspm_packages
 
