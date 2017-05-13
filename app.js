@@ -30,7 +30,8 @@ const  argv   = process.argv,
        curDir = process.cwd(),
        fs     = require('fs'),
        path   = require('path'),
-       GHT    = require('./lib/ght.js')
+       GHT    = require('./lib/ght.js'),
+       ver    = require('./package.json').version
 
 var CONFIG = path.resolve(__dirname, '.ghb'),
     FILE = curDir.replace(/[|&:;$%@"<>()+,\/\\\s]/g, '-'),
@@ -40,10 +41,10 @@ const helpStr =
  init  : Initialize GHT in your repo
        Required parameter: [url]
  status: Show current state of GHB
- issue : Fetch and display issues
-       Optional parameter: [open / closed / id]
+ issues: Fetch and display issues
+       Optional parameter: [open / closed / all / id={ID}]
  pulls : Fetch and display pull requests
-       Optional parameter: [open / closed / id]`,
+       Optional parameter: [open / closed / all / id={ID}]`,
   infoStr =
 `Invalid number of argumnet passed
 ghb -h or ghb --help to see usage details.`
@@ -51,7 +52,7 @@ ghb -h or ghb --help to see usage details.`
 var ghb, index = 0
 
 if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
-	console.log('GHB v1.2.0')
+	console.log(`GHB v${ver}`)
 } else if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
 	console.log(helpStr)
 } else if ((index = argv.indexOf('init')) !== -1) {
