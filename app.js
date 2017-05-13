@@ -58,15 +58,17 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 } else if ((index = argv.indexOf('init')) !== -1) {
 	if (typeof argv[index + 1] === 'string') {
 		ghb = new GHT({data: argv[index + 1], type: 'url'})
-	} else
+	} else {
 		console.log(infoStr)
+	}
 } else if ((index = argv.indexOf('status')) !== -1) {
 	ghb = new GHT({data: confFile, type: 'json'})
 	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
 		let err = `GitHub Terminal has not been initiated in this repository.`
 		throw err;
-	} else
+	} else {
 		console.log('Repository: Github\nURL:', ghb.get_url)
+	}
 } else if ((index = argv.indexOf('issues')) !== -1) {
 	ghb = new GHT({data: confFile, type: 'json'})
 	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
@@ -86,8 +88,9 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 			}
 			ghb.getIssues(state)
 		}
-	} else
+	} else {
 		ghb.getIssues('open')
+	}
 } else if ((index = argv.indexOf('pulls')) !== -1) {
 	ghb = new GHT({data: confFile, type: 'json'})
 	if (typeof ghb === 'undefined' || (Object.keys(ghb).length === 0 && ghb. constructor === Object)) {
@@ -107,8 +110,9 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 			}
 			ghb.getPulls(state)
 		}
-	} else
+	} else {
 		ghb.getPulls('open')
+	}
 } else {
 	console.log(infoStr)
 }
