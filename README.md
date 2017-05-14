@@ -32,12 +32,19 @@ $ ghb status
 ```
 * Get latest issues/pr from GitHub
 ```bash
-$ ghb issues [options: open | closed | all | id={ID}]
-$ ghb pulls [options: open | closed | all | id={ID}]
+$ ghb issues [options: open | closed | all | id={ID} | label={LABELS}]
+$ ghb pulls  [options: open | closed | all | id={ID} | label={LABELS}]
 ```
 
+### What's new _(v1.3.4)_
+* Added markdown support for Terminal
+* Improved UI quality
+* User can search open issues via label(s)
+* Label color resembles that on GitHub
+![screen](Docs/Screenshotv1.3.png)
+
 ### Contribute
-* If you find any bug register an issue.
+* If you find any bug or to request new feature register an issue.
 * If you want to make design improvement [comment here](https://github.com/BytesClub/ghb/issues/10).
 * Look issues and try to solve them and create a pull request
 

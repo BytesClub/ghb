@@ -42,9 +42,9 @@ const helpStr =
        Required parameter: [url]
  status: Show current state of GHB
  issues: Fetch and display issues
-       Optional parameter: [open / closed / all / id={ID}]
+       Optional parameter: [open / closed / all / id={ID} / label={LABELS}]
  pulls : Fetch and display pull requests
-       Optional parameter: [open / closed / all / id={ID}]`,
+       Optional parameter: [open / closed / all / id={ID} / label={LABELS}]`,
   infoStr =
 `Invalid number of argumnet passed
 ghb -h or ghb --help to see usage details.`
@@ -76,20 +76,24 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 		throw err;
 	}
 	if (typeof argv[index + 1] === 'string') {
-		var regM = argv[index + 1].match(/id=(\d+)/i)
+		var regM = argv[index + 1].match(/id=(\d+)/)
+		var regL = argv[index + 1].match(/label=((['"])?([^'"]+)(['"])?)/)
 		if (regM && regM.length !== 0) {
 			let issueId = parseInt(regM[1])
-			ghb.getIssues(issueId)
+			ghb.getIssues({key: "id", value: issueId})
+		} else if(regL && regL.length !== 0) {
+			let label = regL[3]
+			ghb.getIssues({key: "label", value: label})
 		} else {
 			let state = argv[index + 1]
 			if (state !== 'open' && state !== 'closed' && state !== 'all'){
 				console.log(helpStr)
 				process.exit(0)
 			}
-			ghb.getIssues(state)
+			ghb.getIssues({key: 'state', value: state})
 		}
 	} else {
-		ghb.getIssues('open')
+		ghb.getIssues({key: 'state', value: 'open'})
 	}
 } else if ((index = argv.indexOf('pulls')) !== -1) {
 	ghb = new GHT({data: {dir: CONFIG, file: FILE}, type: 'json'})
@@ -98,20 +102,24 @@ if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
 		throw err;
 	}
 	if (typeof argv[index + 1] === 'string') {
-		var regM = argv[index + 1].match(/id=(\d+)/i)
+		var regM = argv[index + 1].match(/id=(\d+)/)
+		var regL = argv[index + 1].match(/label=((['"])?([^'"]+)(['"])?)/)
 		if (regM && regM.length !== 0) {
-			let pullId = parseInt(regM[1])
-			ghb.getPulls(pullId)
+			let issueId = parseInt(regM[1])
+			ghb.getIssues({key: "id", value: issueId})
+		} else if(regL && regL.length !== 0) {
+			let label = regL[3]
+			ghb.getIssues({key: "label", value: label})
 		} else {
 			let state = argv[index + 1]
 			if (state !== 'open' && state !== 'closed' && state !== 'all'){
 				console.log(helpStr)
 				process.exit(0)
 			}
-			ghb.getPulls(state)
+			ghb.getPulls({key: 'state', value: state})
 		}
 	} else {
-		ghb.getPulls('open')
+		ghb.getPulls({key: 'state', value: 'open'})
 	}
 } else {
 	console.log(infoStr)

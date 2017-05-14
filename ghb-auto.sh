@@ -19,7 +19,7 @@ _ghb() {
         opts=("-h" "--help" "-v" "--version" "init" "status" "issues" "pulls")
     elif [[ $prev == "issues" || $prev == "pulls" ]]; then
         unset opts
-        opts=("open" "closed" "all" "id=")
+        opts=("open" "closed" "all" "label=" "id=")
     fi
 
     opt=''
