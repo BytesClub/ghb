@@ -52,7 +52,7 @@ ghb -h or ghb --help to see usage details.`
 var ghb, index = 0
 
 if ((index = argv.indexOf('-v')) !== -1 || (argv.indexOf('--version')) !== -1) {
-	console.log(`GHB v${ver}`)
+	console.log(`GHB v${ver} (C) 2017 Progyan Bhattacharya, Bytes Club`)
 } else if ((index = argv.indexOf('-h')) !== -1 || (argv.indexOf('--help')) !== -1) {
 	console.log(helpStr)
 } else if ((index = argv.indexOf('init')) !== -1) {
