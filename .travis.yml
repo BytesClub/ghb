@@ -20,6 +20,5 @@ branches:
 install:
   - npm install --ignore-scripts
   - npm link
-  - export NODEJS_ENV=development
 script:
   - npm test
