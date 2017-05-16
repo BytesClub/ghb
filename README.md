@@ -36,6 +36,10 @@ $ ghb issues [options: open | closed | all | id={ID} | label={LABELS}]
 $ ghb pulls  [options: open | closed | all | id={ID} | label={LABELS}]
 ```
 
+### What's new _(v1.3.6)_
+* The source code and binary files, and the data storage has been split in different directories.
+* No longer need to re-setup _**ghb**_ in directories, in case of upgrading the package.
+
 ### What's new _(v1.3.4)_
 * Added markdown support for Terminal
 * Improved UI quality
