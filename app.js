@@ -26,17 +26,18 @@
 
 'use strict';
 
-const  argv   = process.argv,
-       curDir = process.cwd(),
-       fs     = require('fs'),
-       path   = require('path'),
-       GHT    = require('./lib/ght.js'),
-       ver    = require('./package.json').version
+const  argv    = process.argv,
+       curDir  = process.cwd(),
+       fs      = require('fs'),
+       path    = require('path'),
+       GHT     = require('./lib/ght.js'),
+       ver     = require('./package.json').version,
 
-var CONFIG = path.resolve(__dirname, '.ghb'),
-    FILE = curDir.replace(/[|&:;$%@"<>()+,\/\\\s]/g, '-'),
-    confFile = (CONFIG + '/' + FILE)
-const helpStr =
+       DIR     = process.env.NODEJS_ENV == 'development' ? __dirname : '~',
+       CONFIG  = path.resolve(DIR, '.ghb'),
+       FILE    = curDir.replace(/[|&:;$%@"<>()+,\/\\\s]/g, '-'),
+
+       helpStr =
 `Usage: ghb [options] [parameter]
  init  : Initialize GHT in your repo
        Required parameter: [url]
@@ -45,7 +46,7 @@ const helpStr =
        Optional parameter: [open / closed / all / id={ID} / label={LABELS}]
  pulls : Fetch and display pull requests
        Optional parameter: [open / closed / all / id={ID} / label={LABELS}]`,
-  infoStr =
+       infoStr =
 `Invalid number of argumnet passed
 ghb -h or ghb --help to see usage details.`
 
