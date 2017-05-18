@@ -1,0 +1,36 @@
+{
+  "name": "ghb",
+  "description": "A command line tool for GitHub Issue and Pull Request",
+  "moduleType": [
+    "globals",
+    "node",
+    "es6"
+  ],
+  "main": "app.js",
+  "authors": [
+    {
+      "name": "Bytes Club",
+      "email": "bytes-club@googlegroups.com",
+      "homepage": "https://bytesclub.github.io"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BytesClub/ghb.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ghb",
+    "GitHub",
+    "BytesClub",
+    "Node"
+  ],
+  "homepage": "https://github.com/BytesClub/ghb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

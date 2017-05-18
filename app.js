@@ -33,7 +33,7 @@ const  argv    = process.argv,
        GHT     = require('./lib/ght.js'),
        ver     = require('./package.json').version,
 
-       DIR     = process.env.NODEJS_ENV == 'development' ? __dirname : (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE),
+       DIR     = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE,
        CONFIG  = path.resolve(DIR, '.ghb'),
        FILE    = curDir.replace(/[|&:;$%@"<>()+,\/\\\s]+/g, '-'),
 

@@ -7,6 +7,7 @@ ghb is a command line tool to fetch and update GitHub Issue and Pull Request fro
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/BytesClub/ghb/master/LICENSE)
 [![Build Status](https://travis-ci.org/BytesClub/ghb.svg?branch=master)](https://travis-ci.org/BytesClub/ghb)
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/ghb)
+[![Bower](https://img.shields.io/bower/v/ghb.svg)](https://bower.io/search/?q=ghb)
 [![Download](https://img.shields.io/npm/dt/ghb.svg)](https://www.npmjs.com/package/ghb)
 [![Issues](https://img.shields.io/github/issues/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/issues)
 [![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/pulls)
@@ -18,6 +19,16 @@ ghb is a command line tool to fetch and update GitHub Issue and Pull Request fro
 * Using _**npm**_
 ```bash
 $ npm install ghb -g
+```
+
+* Using _**bower**_
+```bash
+$ bower install ghb
+```
+_**Note:** Bower will install the package as dependency_
+
+* Autocompletion Script
+```bash
 $ curl https://raw.githubusercontent.com/BytesClub/ghb/master/ghb-auto.sh > /etc/bash_completion.d/ghb
 ```
 
