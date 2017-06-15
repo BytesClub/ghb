@@ -33,4 +33,5 @@ _ghb() {
     COMPREPLY=( $(compgen -W "${opt}" -- ${cur}) )
     return 0
 }
+
 complete -F _ghb ghb

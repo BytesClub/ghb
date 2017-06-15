@@ -7,11 +7,10 @@ ghb is a command line tool to fetch and update GitHub Issue and Pull Request fro
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://raw.githubusercontent.com/BytesClub/ghb/master/LICENSE)
 [![Build Status](https://travis-ci.org/BytesClub/ghb.svg?branch=master)](https://travis-ci.org/BytesClub/ghb)
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/ghb)
+[![Download](https://img.shields.io/npm/dt/ghb.svg)](https://yarnpkg.com/en/package/ghb)
 [![Bower](https://img.shields.io/bower/v/ghb.svg)](https://bower.io/search/?q=ghb)
-[![Download](https://img.shields.io/npm/dt/ghb.svg)](https://www.npmjs.com/package/ghb)
 [![Issues](https://img.shields.io/github/issues/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/issues)
-[![Pull Request](https://img.shields.io/github/issues-pr/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/pulls)
-[![Releases](https://img.shields.io/github/release/BytesClub/ghb.svg)](https://github.com/BytesClub/ghb/releases)
+[![Mailing List](https://img.shields.io/badge/Mailing%20List-BytesClub-blue.svg)](mailto:bytes-club@googlegroups.com)
 [![gitter](https://badges.gitter.im/gitterHQ/gitterHQ.github.io.svg)](https://gitter.im/Bytes_Club/General)
 
 ### Installation
@@ -21,15 +20,25 @@ ghb is a command line tool to fetch and update GitHub Issue and Pull Request fro
 $ npm install ghb -g
 ```
 
-* Using _**bower**_
+* Using _**yarn**_
+```bash
+$ yarn global add ghb
+```
+
+* Using _**bower**(not recommended)_
 ```bash
 $ bower install ghb
+$ cd ./node_modules/ghb && npm link
 ```
-_**Note:** Bower will install the package as dependency_
+&nbsp;&nbsp;&nbsp;&nbsp; _**Note:** Bower will install the package into local directory as dependency_
 
 * Autocompletion Script
 ```bash
 $ curl https://raw.githubusercontent.com/BytesClub/ghb/master/ghb-auto.sh > /etc/bash_completion.d/ghb
+```
+&nbsp;&nbsp;&nbsp;&nbsp; or
+```bash
+$ curl https://raw.githubusercontent.com/BytesClub/ghb/master/ghb-auto.sh >> ~/.bashrc && source ~/.bashrc
 ```
 
 ### Usage
@@ -45,6 +54,12 @@ $ ghb status
 ```bash
 $ ghb issues [options: open | closed | all | id={ID} | label={LABELS}]
 $ ghb pulls  [options: open | closed | all | id={ID} | label={LABELS}]
+```
+
+* Help option
+```bash
+$ ghb --help
+$ ghb --version
 ```
 
 ### What's new _(v1.3.6)_

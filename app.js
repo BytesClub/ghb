@@ -39,7 +39,7 @@ const  argv    = process.argv,
 
        helpStr =
 `Usage: ghb [options] [parameter]
- init  : Initialize GHT in your repo
+ init  : Initialize GHB in your repo
        Required parameter: [url]
  status: Show current state of GHB
  issues: Fetch and display issues
@@ -48,7 +48,8 @@ const  argv    = process.argv,
        Optional parameter: [open / closed / all / id={ID} / label={LABELS}]`,
        infoStr =
 `Invalid number of argumnet passed
-ghb -h or ghb --help to see usage details.`
+ghb -h or ghb --help to see usage details.
+ghb -v or ghb --version to check version of GHB.`
 
 var ghb, index = 0
 

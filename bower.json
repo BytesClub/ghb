@@ -25,7 +25,7 @@
     "BytesClub",
     "Node"
   ],
-  "homepage": "https://github.com/BytesClub/ghb",
+  "homepage": "https://github.com/BytesClub/ghb#readme",
   "ignore": [
     "**/.*",
     "node_modules",
