@@ -28,7 +28,7 @@ $ yarn global add ghb
 * Using _**bower**(not recommended)_
 ```bash
 $ bower install ghb
-$ cd ./node_modules/ghb && npm link
+$ cd ./bower_component/ghb && npm link
 ```
 &nbsp;&nbsp;&nbsp;&nbsp; _**Note:** Bower will install the package into local directory as dependency_
 
