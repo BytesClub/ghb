@@ -1,6 +1,6 @@
 # ghb
 
-![ghb](Docs/ghb.png)
+![ghb](Docs/ghb_new.png)
 
 ghb is a command line tool to fetch and update GitHub Issue and Pull Request from terminal
 
