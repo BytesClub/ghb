@@ -62,6 +62,10 @@ $ ghb --help
 $ ghb --version
 ```
 
+### What's new _(v1.4.0)_
+* Added Manual page entry for ease of usage.
+* Improved code quality for better coverage.
+
 ### What's new _(v1.3.6)_
 * The source code and binary files, and the data storage has been split in different directories.
 * No longer need to re-setup _**ghb**_ in directories, in case of upgrading the package.

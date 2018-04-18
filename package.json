@@ -1,10 +1,10 @@
 {
   "name": "ghb",
-  "version": "1.3.7",
+  "version": "1.4.0",
   "description": "A command line tool for GitHub Issue and Pull Request",
-  "main": "app.js",
+  "main": "bin/app.js",
   "bin": {
-    "ghb": "app.js"
+    "ghb": "bin/app.js"
   },
   "scripts": {
     "test": "ghb init https://github.com/BytesClub/ghb && ghb status"
@@ -31,5 +31,12 @@
   "bugs": {
     "url": "https://github.com/BytesClub/ghb/issues"
   },
+  "man": [
+    "man/ghb.1",
+    "man/ghb-init.1",
+    "man/ghb-status.1",
+    "man/ghb-issues.1",
+    "man/ghb-pulls.1"
+  ],
   "homepage": "https://github.com/BytesClub/ghb#readme"
 }

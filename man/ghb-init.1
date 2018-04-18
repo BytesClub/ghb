@@ -1,0 +1,52 @@
+.TH GHB-INIT 1 "GHB Mannual" "" "GitHub in Terminal"
+.SH NAME
+ghb-init \- Initialize GHB repository in current directory
+.SH SYNOPSIS
+.B ghb init
+.IR URL
+.SH DESCRIPTION
+This command will link the given url with current directory in GHB database. Next time, all operations on issues and pulls will be performed on this particular link.
+.PP
+.BR Note:
+Only one link can be configured in a particular location
+.SH OPTION
+.TP
+.IR URL
+- A valid GitHub repository URL (HTTP/HTTPS) as shown in the address bar of any browser.
+.SH EXAMPLE
+.IP \(bu 4
+Initialize current directory to GHB source repository
+.LP
+        $
+.B
+ghb init https://github.com/BytesClub/ghb
+.SH VERSION
+.B 1.4.0
+- For more details: https://www.npmjs.com/package/ghb
+.SH LICENSE
+.B Copyright © 2017 Progyan Bhattacharya, Bytes Club
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+.PP
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+.SH SEE ALSO
+.B
+ghb-status(1) ghb-issues(1) ghb-pulls(1)
+.SH GHB
+Part of
+.BR ghb(1) 
+suite
